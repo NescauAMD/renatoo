@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Renato</title>
+
+
+    <style>
+        body{
+            background-image: linear-gradient(90deg, blue, purple);
+        }
+
+        .painel{
+            margin: auto;
+
+            width: 500px;
+            height: 500px;
+            border-radius: 20px;
+            text-align: center;
+            padding-top: 50px;
+            font-family: "SUSE", sans-serif;
+        }
+        .painel img {
+            height: 500px;
+        }
+        #sim{
+            height: 40px;
+            width: 60px;
+            background-color: red;
+            border-radius: 10px;
+            color: white;
+            margin-left: -80px;
+        }
+        #nao{
+            position: absolute;
+            height: 40px;
+            width: 60px;
+            background-color: red;
+            border-radius: 10px;
+            color: white;
+            margin-left: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="painel">
+        <h1>Aceita namorar comigo ?</h1>
+
+        <img src="https://media.tenor.com/mxg1RwQmzQQAAAAj/peach-goma-love-pat-head-cheek.gif" alt="">
+
+
+        <a href="https://www.youtube.com/watch?v=9_Bu5MecNdY"><button id="sim" > Sim! </button></a>
+            <button onmouseover="fuja()" id="nao"> Não! </button>
+        </div>
+    </div>
+
+    <script>
+        function fuja(){
+            var botaoNao = document.getElementById("nao")
+
+            var larguraJanela = window.innerWidth;
+            var alturaJanela = window.innerHeight;
+
+            var maxX = larguraJanela - botaoNao.offsetWidth;
+            var maxY = alturaJanela - botaoNao.offsetHeight;
+
+            var aleatorioX = Math.floor(Math.random() * maxX);
+            var aleatorioY = Math.floor(Math.random() * maxY);
+
+            botaoNao.style.left = aleatorioX + "px";
+            botaoNao.style.top = aleatorioY + "px";
+        }
+    </script>
+
+</body>
+</html>
